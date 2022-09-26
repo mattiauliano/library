@@ -18,6 +18,28 @@
             <button class="add-book">+ Add book</button>
             <div class="books-grid"></div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3>Enter your book info!</h3>
+                <form action="add-book">
+                    <input type="text" placeholder="Title" required name="title" max-length="150" id="title">
+                                        
+                    <input type="text" placeholder="Author" name="author" max-length="100" id="author">
+                                        
+                    <input type="number" placeholder="Pages" name="Pages" max="100000" id="pages">
+                </form>
+                <div class="read-or-not">
+                    <label for="read">Did you read it?</label>
+                    <input type="checkbox" id="read" value="read">
+                </div>
+                <div class="inline">
+                    <button class="submit">Submit</button>
+                    <button class="close-modal">Back</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>

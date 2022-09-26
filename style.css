@@ -17,15 +17,15 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    padding: 32px 30px;
-    height: 40px;
-    margin-bottom: 15px;
+    padding: 32px 60px;
+    height: 85px;
+    margin-bottom: 20px;
     background-color: white;
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 .header .logo {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     letter-spacing: 3px;
     font-weight: 600;
 }
@@ -33,10 +33,166 @@ body {
 .header .log-in {
     border: none;
     padding: 5px 20px;
-    font-weight: bold;
-    transition: transform 0.3s ease-in;
+    transition: transform 0.2s;
+    border-radius: 3px;
+    height: 45px;
+    width: 10vw;
+    font-size: 20px;
 }
 
 .header .log-in:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-book {
+    padding: 8px 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in;
+    border: transparent;
+    font-size: 30px;
+    border-radius: 3px;
+    width: fit-content;
+    margin-bottom: 20px;
+    transition: filter 0.4s;
+}
+
+.add-book:hover {
+    filter: brightness(90%);
+}
+
+/* Modal */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.116);
+    display: grid;
+    place-items: center;
+    visibility: hidden;
+    z-index: -10;
+}
+
+.open-modal {
+    visibility: visible;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input:nth-child(1) {
+    width: 360px;
+    height: 40px;
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+form input:nth-child(2) {
+    width: 360px;
+    height: 40px;
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+form input:nth-child(3) {
+    width: 360px;
+    height: 40px;
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+label {
+    font-size: 30px;
+}
+
+.inline {
+    gap: 45px;
+    display: flex;
+}
+
+.submit, .close-modal {
+    border: none;
+    padding: 5px 20px;
+    transition: transform 0.2s;
+    border-radius: 3px;
+    height: 45px;
+    width: 150px;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.submit:hover, .close-modal:hover {
+    transform: scale(1.1);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 3fr));
+    grid-gap: 1rem;
+    width: 100vw;
+    height: fit-content;
+    place-items: center;
+}
+
+.card-js {
+    background-color: white;
+    width: 350px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, fit-content);
+    place-items: center;
+}
+
+.read-yes, .read-not, .remove-btn {
+    border: none;
+    padding: 5px 10px;
+    transition: transform 0.2s;
+    border-radius: 3px;
+    height: 30px;
+    width: 80px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.read-yes {
+    background-color: rgb(78, 175, 78);
+}
+
+.read-not {
+    background-color: rgb(221, 72, 72);
+}
+
+.remove-btn {
+    color: black
 }
