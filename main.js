@@ -2,46 +2,42 @@
 let myLibrary = [];
 let read = "";
 
-// Objects Constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+// Classes
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+};
 
 // DOM Elements
-
-// Buttons
 const addBookBtn = document.querySelector(".add-book");
 const closeModalBtn = document.querySelector(".close-modal");
-addBookBtn.addEventListener("click", toggleModal);
-closeModalBtn.addEventListener("click", toggleModal);
-
-const submit = document.querySelector(".submit");
-
-
-// Modal
 const modal = document.querySelector(".modal-overlay");
-
+const grid = document.querySelector(".books-grid");
 // Inputs
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const checkboxInput = document.querySelector("#read");
+// Open-close modal event listener
+addBookBtn.addEventListener("click", toggleModal);
+closeModalBtn.addEventListener("click", toggleModal);
+const submit = document.querySelector(".submit");
 
-// Cards section
-const grid = document.querySelector(".books-grid");
-
-
+// Modal open-close
 function toggleModal() {
     modal.classList.toggle("open-modal");
 }
 
+// Check the checkbox value
 function isChecked() {
     checkboxInput.checked === true ? read = "yes" : read = "no";
 }
 
+// Create a new book with the constructor
 function addBookToObj() {
     isChecked();
 
@@ -49,6 +45,7 @@ function addBookToObj() {
     return newBook;
 }
 
+// Clear inputs' value
 function clear() {
     titleInput.value = "";
     authorInput.value = "";
@@ -56,6 +53,7 @@ function clear() {
     modal.classList.toggle("open-modal");
 }
 
+// Create a card
 function createCard() {
     let newBook = addBookToObj();
     const card = document.createElement("div");
